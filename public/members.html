@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sandwich Members</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="assets/stylesheets/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<!-- <div class="btn-toolbar">
+  <div class="btn-group">
+    ...
+  </div>
+</div> -->
+
+<body class="container">
+  <div class="navbar btn-toolbar btn-group">
+    <div class="navbar-inner">
+      <ul class="nav nav-pills nav-stacked">
+        <a href="/signup" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign
+          Up</a>
+        <a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="jumbotron text-centerr">
+    <h1>Boomer Sandwich</h1>
+    <hr>
+    <p>Here we are, like the trees in autumn, stuck between summer and winter, full grown, well rooted, and about to
+      peak in color.
+    </p>
+    <p> We take care of the wild nature and riotous growth of summer in our children.
+    </p>
+    <p>We fear the path forward, fallen leaves, broken branches, ice storms, all seen in the face of our aging parents.
+    </p>
+    <p>
+      Once the Baby Boomers, we are now the fall generation and everything falls on us.
+    </p>
+  </div>
+
+  <div>
+    <section>
+      <h2 class="leafbar"> Hey Booomer Sandwich people! Use a little help. Explore our webiste to find the resources you
+        need. </h2>
+    </section>
+    <hr>
+
+
+    <div class="row">
+
+      <div class="col-sm-4">
+        <h3>Find a medical service near you</h3>
+        <p>Search here for a doctor, dentist or drugstore near you.</p>
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">search by zip code</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-lg">
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h3>What will you cook tonight</h3>
+        <p>Follow this lnk to find recipes with ingredients you have in hand</p>
+        <p>Search button connected to cooking api.</p>
+      </div>
+
+      <div class="col-sm-4">
+        <h3>what is ailing you</h3>
+        <p>web md api here..</p>
+        <p>TYpe in your symptons here</p>
+      </div>
+    </div>
+
+     <!-- Trigger the modal with a button -->
+     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+     <!-- Modal -->
+     <div id="myModal" class="modal fade" role="dialog">
+       <div class="modal-dialog">
+ 
+         <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <h4 class="modal-title">Modal Header</h4>
+             <button type="button" class="close" id='closer1' data-dismiss="modal">&times;</button>
+           </div>
+           <div class="modal-body">
+             <button type="button" class="btn btn-default" id='drugstore'>Drug Stores</button>
+             <p><span id='results'></span> </p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" id='closer2' data-dismiss="modal">Close</button>
+           </div>
+         </div>
+ 
+       </div>
+     </div>
+
+    <section>
+      <h2 class="leafbar">Find Other Useful Resources Below </h2>
+    </section>
+
+    <!-- <div class="row">
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class=" img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+  </div> -->
+
+
+    <div class="row">
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/members.js"></script>
+
+</body>
+
+</html>
