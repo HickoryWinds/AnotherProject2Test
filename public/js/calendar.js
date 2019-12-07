@@ -28,8 +28,23 @@ $(document).ready(function () {
           // add calendar id to edit button
           editButton.data('id', data[i].id);
           // append retrieved calendar item and buttons to div
-          row.append("<p>On: " + data[i].month + ' ' + data[i].day + ' ' + data[i].year + ' ' +
-            "At: " + data[i].hour + ':' + data[i].min + data[i].ampm + " Event: " +
+          var Min = data[i].min
+          if (data[i].ampm == 1){
+              var AMPM = "AM";
+          } else if (data[i].ampm == 2){
+              var AMPM = "PM";
+          }
+          if (data[i].min < 10){
+             Min = "0" + data[i].min;
+          }
+          var Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+          for (j = 1; j < 13; j++){
+            if (j == data[i].month){
+              var Month = Months[j-1];
+            }
+          }
+          row.append("<p>On: " + Month + ' ' + data[i].day + ' ' + data[i].year + ' ' +
+            "At: " + data[i].hour + ':' + Min + ' ' + AMPM + " Event: " +
             data[i].event + "</p>");
           row.append(deleteButton);
           row.append(' ');
@@ -74,9 +89,9 @@ $(document).ready(function () {
       // on success, rewrite entry listing, reset form and clear event entry box
       .then(function () {
         showAll();
+        $('form').get(0).reset();
+        $("#event").val("");
       });
-    $('form').get(0).reset();
-    $("#event").val("");
   });
 
   // deletes an event when the user clicks the delete button
