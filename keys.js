@@ -2,9 +2,6 @@
 console.log("\nthis is loaded");
 
 var yelpAPIKey = {yelpAPIKey: process.env.YELPAPIKEY};
-console.log('3333333333')
-console.log(process.env.YELPAPIKEY);
-console.log(yelpAPIKey);
 // export data so it is available
 exports.yelp = {
     yelpAPIKey: process.env.YELPAPIKEY

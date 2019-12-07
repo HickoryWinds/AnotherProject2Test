@@ -49,8 +49,6 @@ module.exports = function(app) {
 
 // get event data for logged in user
 app.get("/api/event_data", function(req, res) {
-  console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyy')
-  console.log(res.req.user.id);
   db.calendar.findAll({
     where: {
       UserId: res.req.user.id
@@ -75,11 +73,6 @@ app.get("/api/event_data", function(req, res) {
 
 // Add an event
 app.post("/api/new", function(req, res) {
-  console.log('^^^^^^^^^^^^^^^^^^^^^^')
-   console.log("Event Data:");
-   console.log(req.user.id);
-   console.log(req.body);
- 
    db.calendar.create({
      // time: req.body.time,
      // date: req.body.date,
@@ -113,9 +106,6 @@ app.post("/api/new", function(req, res) {
  
    // PUT route for updating entries. We can get the updated entry data from req.body
    app.put("/api/event_update/:id", function(req, res) {
-     console.log('req');
-     console.log(req.body);
-     console.log(req.params);
      // Update takes in an object describing the properties we want to update, and
      // we use where to describe which objects we want to update
      db.calendar.update({

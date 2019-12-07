@@ -7,7 +7,6 @@ $(document).ready(function () {
     if (zipCode.length != 5 || isNaN(zipCode)) {
       alert('Zip Code must be five numbers!');
     }
-    console.log(zipCode);
     var yelpApiKey = "oy6hhHsq3Rftgnl-vLTLO0vfP8VKnoGjq4a_AhrqhbfG4Q3Mothi8_PzIv_GmBntG9J0gBmx04lCPmhZi2xn4mJW_CRHtohDxdhGOoUS4GGErey7MesWAQLgAYWBXXYx";
     var queryURL = "https://cors-anywhere.herokuapp.com/http://api.yelp.com/v3/businesses/search?term=doctors&location=" + zipCode;
     $.ajax({
@@ -19,17 +18,7 @@ $(document).ready(function () {
       dataType: "json",
     }).then(function (response) {
       Results = response;
-      console.log("Results");
-      console.log(Results.businesses);
       for (var i = 1; i < 6; i++) {
-        console.log(Results.businesses[i].name);
-        console.log(Results.businesses[i].location.address1);
-        console.log(Results.businesses[i].location.city);
-        console.log(Results.businesses[i].location.zip_code);
-        console.log(Results.businesses[i].phone);
-        console.log(Results.businesses[i].url);
-        
-        
         $(".servicesResults").append(i + " Business Name:     " + Results.businesses[i].name);
         $(".servicesResults").append("<br />Business Address:     " + Results.businesses[i].address1);
         $(".servicesResults").append("<br />Business City:     " + Results.businesses[i].location.city);
@@ -44,9 +33,8 @@ $(document).ready(function () {
   $('#dentist').click("submit", findDentist);
   function findDentist() {
     $(".servicesResults").empty();
-    // yelp works
+    // yelp
     var zipCode = $('#zip').val();
-    console.log(zipCode);
     if (zipCode.length != 5 || isNaN(zipCode)) {
       alert('Zip Code must be five numbers!');
     }
@@ -61,16 +49,7 @@ $(document).ready(function () {
       dataType: "json",
     }).then(function (response) {
       Results = response;
-      console.log("Results");
-      console.log(Results.businesses);
       for (var i = 1; i < 6; i++) {
-        console.log(Results.businesses[i].name);
-        console.log(Results.businesses[i].location.address1);
-        console.log(Results.businesses[i].location.city);
-        console.log(Results.businesses[i].location.zip_code);
-        console.log(Results.businesses[i].phone);
-        
-        
         $(".servicesResults").append(i + " Business Name:     " + Results.businesses[i].name);
         $(".servicesResults").append("<br />Business Address:     " + Results.businesses[i].address1);
         $(".servicesResults").append("<br />Business City:     " + Results.businesses[i].location.city);
@@ -86,10 +65,8 @@ $(document).ready(function () {
   $('#drugstore').click("submit", findDrugstore);
   function findDrugstore() {
     $(".servicesResults").empty();
-    // emptyZip();
-    // yelp works
+    // yelp
     var zipCode = $('#zip').val();
-    console.log(zipCode);
     if (zipCode.length != 5 || isNaN(zipCode)) {
       alert('Zip Code must be five numbers!');
     }
@@ -104,16 +81,7 @@ $(document).ready(function () {
       dataType: "json",
     }).then(function (response) {
       Results = response;
-      console.log("Results");
-      console.log(Results.businesses);
       for (var i = 1; i < 6; i++) {
-        console.log(Results.businesses[i].name);
-        console.log(Results.businesses[i].location.address1);
-        console.log(Results.businesses[i].location.city);
-        console.log(Results.businesses[i].location.zip_code);
-        console.log(Results.businesses[i].phone);
-        
-        
         $(".servicesResults").append(i + " Business Name:     " + Results.businesses[i].name);
         $(".servicesResults").append("<br />Business Address:     " + Results.businesses[i].address1);
         $(".servicesResults").append("<br />Business City:     " + Results.businesses[i].location.city);
@@ -128,7 +96,6 @@ $(document).ready(function () {
   // empty zip code box
   $('#closer1').click("submit", emptyZip);
   function emptyZip(){
-    console.log('closing');
     $('#zip').val('');
   }
 });

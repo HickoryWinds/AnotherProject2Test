@@ -31,8 +31,6 @@ module.exports = function (sequelize, DataTypes) {
 
   // one user can have many events
   User.associate = function (models) {
-    console.log(models);
-    console.log(models.calendar);
     User.hasMany(models.calendar, {
       onDelete: 'cascade'
     });

@@ -34,9 +34,11 @@ $(document).ready(function () {
           } else if (data[i].ampm == 2){
               var AMPM = "PM";
           }
+          // if minutes less than 10 add leading zero
           if (data[i].min < 10){
              Min = "0" + data[i].min;
           }
+          // convert month integer to text
           var Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
           for (j = 1; j < 13; j++){
             if (j == data[i].month){
@@ -60,8 +62,6 @@ $(document).ready(function () {
   var userId = '';
   $.get("/api/user_data").then(function (data) {
     userId = data.id;
-    console.log('userIdxxx')
-    console.log(userId)
   });
 
 
@@ -81,8 +81,8 @@ $(document).ready(function () {
       UserId: userId
       //   created_at: moment().format("YYYY-MM-DD HH:mm:ss")
     };
-    console.log('&&&&&&&&&&&&&&&&&')
-    console.log(newEvent);
+    // console.log('&&&&&&&&&&&&&&&&&')
+    // console.log(newEvent);
 
     // send AJAX POST-request with jQuery
     $.post("/api/new", newEvent)
@@ -97,13 +97,7 @@ $(document).ready(function () {
   // deletes an event when the user clicks the delete button
   $(document).on('click', 'button.delete', deleteEntry);
   function deleteEntry(event) {
-    console.log('deleting?');
-    console.log(event);
-    console.log('deleting?');
-    event.stopPropagation();
     var id = $(this).data("id");
-    console.log(this);
-    console.log(id);
     $.ajax({
       method: "DELETE",
       url: "/api/event_del/" + id
@@ -116,9 +110,6 @@ $(document).ready(function () {
   $(document).on('click', 'button.edit', editEntry);
   function editEntry() {
     var id = $(this).data("id");
-    console.log('id');
-    console.log($("#event").val().trim());
-    console.log(id);
     $.ajax({
       method: "PUT",
       url: "/api/event_update/" + id,
