@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false,
             validate: {
                 len: {
-                    args: [1,4],
+                    args: [4,5],
                     message: 'Year not selected.'
                 }
             }
