@@ -4,27 +4,64 @@ module.exports = function(sequelize, DataTypes){
     var calendar = sequelize.define('calendar', {
         month: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [1, 2],
+                    message: 'Month not selected.'
+                }
+            }
+            
         },
         day: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [1, 2],
+                    message: 'Day not selected.'
+                }
+            }
         },
         year: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [4],
+                    message: 'Year not selected.'
+                }
+            }
         },
         hour: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [1, 2],
+                    message: 'Hour not selected.'
+                }
+            }
         },
         min: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [1, 2],
+                    message: 'Minute not selected.'
+                }
+            }
         },
         ampm: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: [2],
+                    message: 'AM/PM not selected.'
+                }
+            }
         },
         event: {
             type: DataTypes.STRING,
