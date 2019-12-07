@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false,
             validate: {
                 len: {
-                    args: [4],
+                    args: [1,4],
                     message: 'Year not selected.'
                 }
             }
@@ -58,7 +58,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false,
             validate: {
                 len: {
-                    args: [2],
+                    args: [1,2],
                     message: 'AM/PM not selected.'
                 }
             }
