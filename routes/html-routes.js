@@ -40,4 +40,10 @@ module.exports = function(app) {
   app.get("/calendar", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/calendar.html"));
   });
+
+  // log user out
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 };
